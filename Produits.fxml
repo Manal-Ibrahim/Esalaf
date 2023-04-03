@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="produitint" prefHeight="639.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.fstt.javaprojet.ProduitsDAO">
+   <children>
+      <VBox layoutX="14.0" layoutY="216.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="165.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="648.0" AnchorPane.topAnchor="216.0">
+         <children>
+            <Label text="Nom">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nom" />
+            <Label text="Qantité au Stock">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="quantite" />
+            <Label text="Prix">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="prix" />
+         </children>
+      </VBox>
+      <TableView fx:id="table" layoutX="340.0" layoutY="184.0" onMouseClicked="#getData" prefHeight="337.0" prefWidth="566.0" AnchorPane.bottomAnchor="118.0" AnchorPane.leftAnchor="340.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="184.0">
+        <columns>
+          <TableColumn fx:id="colid" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colnom" prefWidth="247.0" text="Nom" />
+            <TableColumn fx:id="colquantite" prefWidth="116.0" text="Quantité" />
+            <TableColumn fx:id="colprix" prefWidth="127.0" text="Prix unitaire (DH)" />
+        </columns>
+      </TableView>
+      <Label layoutX="73.0" layoutY="110.0" text="Registre Produit" textFill="#ffab00" AnchorPane.bottomAnchor="506.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="566.0" AnchorPane.topAnchor="80.0">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <ButtonBar layoutX="146.0" layoutY="574.0" prefHeight="40.0" prefWidth="415.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="146.0" AnchorPane.rightAnchor="358.0" AnchorPane.topAnchor="574.0">
+        <buttons>
+          <Button fx:id="btnSave" mnemonicParsing="false" onAction="#create" style="-fx-background-color: a0e426;" text="Enregistrer">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnDelete" layoutX="135.0" layoutY="18.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: e63232;" text="Supprimer">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnUpdate" layoutX="135.0" layoutY="18.0" mnemonicParsing="false" onAction="#update" style="-fx-background-color: f77976;" text="Modifier">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnClear" layoutX="200.0" layoutY="18.0" mnemonicParsing="false" onAction="#clearCh" style="-fx-background-color: ffab00;" text="Vider">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+        </buttons>
+      </ButtonBar>
+      <Button fx:id="bntClient" layoutX="453.0" layoutY="38.0" mnemonicParsing="false" onAction="#openClient" prefHeight="30.0" prefWidth="108.0" style="-fx-background-color: a0e426;" text="Clients" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="358.0" AnchorPane.topAnchor="38.0">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCredit" layoutX="798.0" layoutY="38.0" mnemonicParsing="false" onAction="#openCredit" prefHeight="30.0" prefWidth="108.0" style="-fx-background-color: e63232;" text="Crédit" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="798.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="38.0">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button disable="true" layoutX="684.0" layoutY="38.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="108.0" style="-fx-background-color: ffab00;" text="Produits" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="684.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="38.0">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCommandes" layoutX="569.0" layoutY="38.0" mnemonicParsing="false" onAction="#openCommande" prefHeight="30.0" prefWidth="108.0" style="-fx-background-color: f77976;" text="Commandes" AnchorPane.bottomAnchor="571.0" AnchorPane.leftAnchor="569.0" AnchorPane.rightAnchor="242.0" AnchorPane.topAnchor="38.0">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnMenu" layoutX="340.0" layoutY="38.0" mnemonicParsing="false" onAction="#retourMenu" prefHeight="30.0" prefWidth="108.0" style="-fx-background-color: pink;" text="Menu">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
